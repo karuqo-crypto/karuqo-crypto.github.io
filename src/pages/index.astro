@@ -1,0 +1,438 @@
+---
+const researchInterests = [
+	'Topology Optimization',
+	'Computational Fluid Dynamics',
+	'Lattice Boltzmann Method',
+	'Adjoint Methods',
+	'Unsteady Flow and Nonlinear Dynamics',
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta
+			name="description"
+			content="Academic homepage of Zongyuan Liu, focusing on topology optimization, computational fluid dynamics, lattice Boltzmann methods, and adjoint analysis."
+		/>
+		<title>Zongyuan Liu</title>
+	</head>
+
+	<body>
+		<header>
+			<nav>
+				<a class="name" href="/">Zongyuan Liu</a>
+
+				<div class="links">
+					<a href="#about">About</a>
+					<a href="#research">Research</a>
+					<a href="#publications">Publications</a>
+					<a href="#projects">Projects</a>
+					<a href="#contact">Contact</a>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<section class="hero">
+				<p class="eyebrow">Computational Science · Fluid Mechanics · Optimization</p>
+
+				<h1>Zongyuan Liu</h1>
+
+				<p class="intro">
+					Graduate student in mathematics at East China Normal University and
+					Special Research Student at Osaka University.
+				</p>
+
+				<p class="description">
+					My research focuses on topology optimization, computational fluid
+					dynamics, lattice Boltzmann methods, discrete adjoint analysis, and
+					unsteady flow systems.
+				</p>
+
+				<div class="buttons">
+					<a class="primary" href="#research">View research</a>
+					<a class="secondary" href="#contact">Contact</a>
+				</div>
+			</section>
+
+			<section id="about">
+				<div class="section-title">
+					<span>01</span>
+					<h2>About</h2>
+				</div>
+
+				<div class="two-columns">
+					<div>
+						<p>
+							I am interested in the mathematical modeling and numerical
+							optimization of complex fluid systems.
+						</p>
+
+						<p>
+							My current work investigates statistical adjoint topology
+							optimization for unsteady flows, with particular attention to
+							flow instability, vortex dynamics, and physically meaningful
+							objective evaluation.
+						</p>
+					</div>
+
+					<div class="panel">
+						<h3>Current affiliations</h3>
+						<p>East China Normal University</p>
+						<p>Osaka University</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="research" class="alternate">
+				<div class="section-title">
+					<span>02</span>
+					<h2>Research Interests</h2>
+				</div>
+
+				<div class="interest-grid">
+					{
+						researchInterests.map((interest) => (
+							<article>
+								<h3>{interest}</h3>
+							</article>
+						))
+					}
+				</div>
+			</section>
+
+			<section id="publications">
+				<div class="section-title">
+					<span>03</span>
+					<h2>Publications</h2>
+				</div>
+
+				<article class="publication">
+					<p class="status">Manuscript in preparation</p>
+
+					<h3>
+						A statistical adjoint topology optimization framework for
+						unsteady flows
+					</h3>
+
+					<p>
+						Zongyuan Liu, Musaddiq Al Ali, Kentaro Yaji, and Shengfeng Zhu
+					</p>
+				</article>
+			</section>
+
+			<section id="projects" class="alternate">
+				<div class="section-title">
+					<span>04</span>
+					<h2>Selected Projects</h2>
+				</div>
+
+				<div class="projects">
+					<article>
+						<h3>Statistical adjoint topology optimization</h3>
+						<p>
+							Development of an unsteady LBM–LES optimization framework with
+							statistical convergence detection and discrete adjoint analysis.
+						</p>
+					</article>
+
+					<article>
+						<h3>Phase-field topology optimization</h3>
+						<p>
+							Mathematical modeling and numerical optimization of
+							Navier–Stokes and convection–diffusion systems.
+						</p>
+					</article>
+
+					<article>
+						<h3>Meshless numerical methods</h3>
+						<p>
+							Development of LSMPS-based solvers for Poisson and Stokes
+							problems with embedded boundaries.
+						</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="contact">
+				<div class="section-title">
+					<span>05</span>
+					<h2>Contact</h2>
+				</div>
+
+				<p class="contact-text">
+					I am interested in research opportunities and collaborations in
+					computational fluid dynamics, topology optimization, and numerical
+					modeling.
+				</p>
+
+				<div class="buttons">
+					<a class="primary" href="mailto:your-email@example.com">Email</a>
+					<a
+						class="secondary"
+						href="https://github.com/karuqo-crypto"
+						target="_blank"
+						rel="noreferrer"
+					>
+						GitHub
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<p>© 2026 Zongyuan Liu. Built with Astro and GitHub Pages.</p>
+		</footer>
+	</body>
+</html>
+
+<style>
+	:global(*) {
+		box-sizing: border-box;
+	}
+
+	:global(html) {
+		scroll-behavior: smooth;
+	}
+
+	:global(body) {
+		margin: 0;
+		background: #f7f8fa;
+		color: #17202a;
+		font-family:
+			Inter,
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			sans-serif;
+		line-height: 1.7;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	header {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		border-bottom: 1px solid #dfe5ea;
+		background: rgba(247, 248, 250, 0.92);
+		backdrop-filter: blur(12px);
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1080px;
+		min-height: 68px;
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+
+	.name {
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.links {
+		display: flex;
+		gap: 24px;
+	}
+
+	.links a {
+		color: #5f6b76;
+		font-size: 0.94rem;
+		text-decoration: none;
+	}
+
+	.links a:hover {
+		color: #245b88;
+	}
+
+	main {
+		width: 100%;
+	}
+
+	section {
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 96px 24px;
+	}
+
+	.hero {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 76vh;
+	}
+
+	.eyebrow,
+	.status,
+	.section-title span {
+		color: #245b88;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		margin: 14px 0 20px;
+		font-size: clamp(3.7rem, 10vw, 7rem);
+		line-height: 0.95;
+		letter-spacing: -0.06em;
+	}
+
+	.intro {
+		max-width: 780px;
+		margin: 0 0 14px;
+		font-size: clamp(1.25rem, 2.3vw, 1.65rem);
+	}
+
+	.description {
+		max-width: 760px;
+		margin: 0 0 34px;
+		color: #5f6b76;
+		font-size: 1.1rem;
+	}
+
+	.buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.buttons a {
+		padding: 10px 17px;
+		border: 1px solid #245b88;
+		border-radius: 6px;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.primary {
+		background: #245b88;
+		color: white;
+	}
+
+	.secondary {
+		color: #245b88;
+	}
+
+	.section-title {
+		display: flex;
+		align-items: baseline;
+		gap: 16px;
+		margin-bottom: 42px;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: clamp(2rem, 4vw, 3rem);
+		letter-spacing: -0.04em;
+	}
+
+	h3 {
+		margin-top: 0;
+	}
+
+	.two-columns {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		gap: 56px;
+	}
+
+	.panel,
+	.publication,
+	.interest-grid article,
+	.projects article {
+		border: 1px solid #dfe5ea;
+		border-radius: 10px;
+		background: white;
+	}
+
+	.panel,
+	.publication {
+		padding: 28px;
+	}
+
+	.alternate {
+		max-width: none;
+		padding-right: max(24px, calc((100vw - 1080px) / 2 + 24px));
+		padding-left: max(24px, calc((100vw - 1080px) / 2 + 24px));
+		background: #edf2f5;
+	}
+
+	.interest-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 18px;
+	}
+
+	.interest-grid article,
+	.projects article {
+		padding: 24px;
+	}
+
+	.projects {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 18px;
+	}
+
+	.projects p,
+	.publication p,
+	.contact-text {
+		color: #5f6b76;
+	}
+
+	.contact-text {
+		max-width: 700px;
+		font-size: 1.1rem;
+	}
+
+	footer {
+		padding: 34px 24px;
+		border-top: 1px solid #dfe5ea;
+		color: #5f6b76;
+		text-align: center;
+	}
+
+	@media (max-width: 760px) {
+		nav {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 8px;
+			padding-top: 14px;
+			padding-bottom: 14px;
+		}
+
+		.links {
+			width: 100%;
+			gap: 14px;
+			overflow-x: auto;
+		}
+
+		.two-columns,
+		.interest-grid,
+		.projects {
+			grid-template-columns: 1fr;
+		}
+
+		.hero {
+			min-height: auto;
+			padding-top: 88px;
+			padding-bottom: 80px;
+		}
+
+		section {
+			padding-top: 74px;
+			padding-bottom: 74px;
+		}
+	}
+</style>
