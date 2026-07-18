@@ -2,9 +2,73 @@
 const researchInterests = [
 	'Topology Optimization',
 	'Computational Fluid Dynamics',
-	'Lattice Boltzmann Method',
-	'Adjoint Methods',
-	'Unsteady Flow and Nonlinear Dynamics',
+	'Numerical Analysis',
+	'Partial Differential Equations',
+	'Scientific Computing',
+];
+
+const education = [
+	{
+		degree: 'Master of Science in Mathematics',
+		institution: 'East China Normal University',
+		location: 'Shanghai, China',
+		period: 'Sep 2024 – Jun 2027 (Expected)',
+	},
+	{
+		degree: 'Bachelor of Science in Physics',
+		institution: 'East China Normal University',
+		location: 'Shanghai, China',
+		period: 'Sep 2020 – Jun 2024',
+	},
+];
+
+const projects = [
+	{
+		title: 'Topology Optimization of Multiphysics Fluid Systems',
+		period: 'Oct 2024 – Jun 2025',
+		tools: 'FreeFEM++, Python',
+		description:
+			'Studied phase-field-based topology optimization for coupled Poisson–Boltzmann, Navier–Stokes, and convection–diffusion systems, with applications to microfluidic mixing.',
+	},
+	{
+		title: 'Simulation of Poisson–Nernst–Planck Equations in Electrolytes',
+		period: 'Dec 2023 – Mar 2024',
+		tools: 'MATLAB',
+		description:
+			'Reproduced a two-dimensional exponential-fitting method for drift–diffusion models and verified its convergence and stability using benchmark problems.',
+	},
+	{
+		title: 'Quantum Thermalization of a Single Atom in Strong Magnetic Fields',
+		period: 'Nov 2022 – Apr 2023',
+		tools: 'Fortran 90, MATLAB',
+		description:
+			'Numerically computed hydrogen energy levels under strong magnetic fields and analyzed the transition of level statistics from Poisson to Wigner–Dyson distributions.',
+	},
+	{
+		title: 'Face Recognition Based on Laser-Induced Photonic Lattices',
+		period: 'Jun 2023 – Oct 2023',
+		tools: 'MATLAB, Mathematica',
+		description:
+			'Developed data-processing algorithms and implemented a basic face-recognition method as part of a collaborative research project.',
+	},
+];
+
+const skills = [
+	'Python',
+	'MATLAB',
+	'FreeFEM++',
+	'Fortran 90',
+	'Mathematica',
+	'C',
+];
+
+const awards = [
+	'University-Level Outstanding Graduate, East China Normal University, 2024',
+	'National-Level Undergraduate Innovation and Entrepreneurship Training Project, Project Leader, 2023',
+	'Municipal-Level Undergraduate Innovation and Entrepreneurship Project, Shanghai, Project Member, 2023',
+	'Excellent Undergraduate Scholarship, 2020–2021',
+	'Excellent Undergraduate Scholarship, 2021–2022',
+	'Excellent Undergraduate Scholarship, 2022–2023',
 ];
 ---
 
@@ -15,7 +79,7 @@ const researchInterests = [
 		<meta name="viewport" content="width=device-width" />
 		<meta
 			name="description"
-			content="Academic homepage of Zongyuan Liu, focusing on topology optimization, computational fluid dynamics, lattice Boltzmann methods, and adjoint analysis."
+			content="Academic homepage of Zongyuan Liu, a graduate student in mathematics working on topology optimization, computational fluid dynamics, and scientific computing."
 		/>
 		<title>Zongyuan Liu</title>
 	</head>
@@ -27,9 +91,10 @@ const researchInterests = [
 
 				<div class="links">
 					<a href="#about">About</a>
+					<a href="#education">Education</a>
 					<a href="#research">Research</a>
-					<a href="#publications">Publications</a>
 					<a href="#projects">Projects</a>
+					<a href="#skills">Skills</a>
 					<a href="#contact">Contact</a>
 				</div>
 			</nav>
@@ -37,23 +102,24 @@ const researchInterests = [
 
 		<main>
 			<section class="hero">
-				<p class="eyebrow">Computational Science · Fluid Mechanics · Optimization</p>
+				<p class="eyebrow">
+					Mathematics · Computational Science · Fluid Mechanics
+				</p>
 
 				<h1>Zongyuan Liu</h1>
 
 				<p class="intro">
-					Graduate student in mathematics at East China Normal University and
-					Special Research Student at Osaka University.
+					Graduate student in mathematics at East China Normal University.
 				</p>
 
 				<p class="description">
-					My research focuses on topology optimization, computational fluid
-					dynamics, lattice Boltzmann methods, discrete adjoint analysis, and
-					unsteady flow systems.
+					My research interests include topology optimization, computational
+					fluid dynamics, numerical analysis, partial differential equations,
+					and scientific computing.
 				</p>
 
 				<div class="buttons">
-					<a class="primary" href="#research">View research</a>
+					<a class="primary" href="#research">Research interests</a>
 					<a class="secondary" href="#contact">Contact</a>
 				</div>
 			</section>
@@ -67,29 +133,52 @@ const researchInterests = [
 				<div class="two-columns">
 					<div>
 						<p>
-							I am interested in the mathematical modeling and numerical
-							optimization of complex fluid systems.
+							I received my bachelor’s degree in physics from East China
+							Normal University and am currently pursuing a master’s degree
+							in mathematics.
 						</p>
 
 						<p>
-							My current work investigates statistical adjoint topology
-							optimization for unsteady flows, with particular attention to
-							flow instability, vortex dynamics, and physically meaningful
-							objective evaluation.
+							My academic interests lie at the intersection of mathematical
+							modeling, numerical methods, fluid mechanics, and optimization.
 						</p>
 					</div>
 
 					<div class="panel">
-						<h3>Current affiliations</h3>
+						<h3>Current status</h3>
+						<p>Master’s student in Mathematics</p>
 						<p>East China Normal University</p>
-						<p>Osaka University</p>
+						<p>Expected graduation: June 2027</p>
 					</div>
 				</div>
 			</section>
 
-			<section id="research" class="alternate">
+			<section id="education" class="alternate">
 				<div class="section-title">
 					<span>02</span>
+					<h2>Education</h2>
+				</div>
+
+				<div class="timeline">
+					{
+						education.map((item) => (
+							<article class="education-item">
+								<div>
+									<h3>{item.degree}</h3>
+									<p>{item.institution}</p>
+									<p class="muted">{item.location}</p>
+								</div>
+
+								<p class="period">{item.period}</p>
+							</article>
+						))
+					}
+				</div>
+			</section>
+
+			<section id="research">
+				<div class="section-title">
+					<span>03</span>
 					<h2>Research Interests</h2>
 				</div>
 
@@ -104,73 +193,75 @@ const researchInterests = [
 				</div>
 			</section>
 
-			<section id="publications">
-				<div class="section-title">
-					<span>03</span>
-					<h2>Publications</h2>
-				</div>
-
-				<article class="publication">
-					<p class="status">Manuscript in preparation</p>
-
-					<h3>
-						A statistical adjoint topology optimization framework for
-						unsteady flows
-					</h3>
-
-					<p>
-						Zongyuan Liu, Musaddiq Al Ali, Kentaro Yaji, and Shengfeng Zhu
-					</p>
-				</article>
-			</section>
-
 			<section id="projects" class="alternate">
 				<div class="section-title">
 					<span>04</span>
-					<h2>Selected Projects</h2>
+					<h2>Research Experience</h2>
 				</div>
 
 				<div class="projects">
-					<article>
-						<h3>Statistical adjoint topology optimization</h3>
-						<p>
-							Development of an unsteady LBM–LES optimization framework with
-							statistical convergence detection and discrete adjoint analysis.
-						</p>
-					</article>
+					{
+						projects.map((project) => (
+							<article>
+								<p class="period">{project.period}</p>
+								<h3>{project.title}</h3>
+								<p class="tools">{project.tools}</p>
+								<p>{project.description}</p>
+							</article>
+						))
+					}
+				</div>
+			</section>
 
-					<article>
-						<h3>Phase-field topology optimization</h3>
-						<p>
-							Mathematical modeling and numerical optimization of
-							Navier–Stokes and convection–diffusion systems.
-						</p>
-					</article>
+			<section id="skills">
+				<div class="section-title">
+					<span>05</span>
+					<h2>Skills</h2>
+				</div>
 
-					<article>
-						<h3>Meshless numerical methods</h3>
-						<p>
-							Development of LSMPS-based solvers for Poisson and Stokes
-							problems with embedded boundaries.
-						</p>
-					</article>
+				<div class="interest-grid">
+					{
+						skills.map((skill) => (
+							<article>
+								<h3>{skill}</h3>
+							</article>
+						))
+					}
+				</div>
+			</section>
+
+			<section id="awards" class="alternate">
+				<div class="section-title">
+					<span>06</span>
+					<h2>Honors and Awards</h2>
+				</div>
+
+				<div class="panel">
+					<ul class="award-list">
+						{awards.map((award) => <li>{award}</li>)}
+					</ul>
 				</div>
 			</section>
 
 			<section id="contact">
 				<div class="section-title">
-					<span>05</span>
+					<span>07</span>
 					<h2>Contact</h2>
 				</div>
 
 				<p class="contact-text">
-					I am interested in research opportunities and collaborations in
-					computational fluid dynamics, topology optimization, and numerical
-					modeling.
+					For academic communication, please contact me by email or through
+					GitHub.
 				</p>
 
 				<div class="buttons">
-					<a class="primary" href="mailto:your-email@example.com">Email</a>
+					<a
+						class="primary"
+						href="mailto:51275500058@stu.ecnu.edu.cn"
+					>
+						Email
+					</a>
+
 					<a
 						class="secondary"
 						href="https://github.com/karuqo-crypto"
@@ -184,7 +275,7 @@ const researchInterests = [
 		</main>
 
 		<footer>
-			<p>© 2026 Zongyuan Liu. Built with Astro and GitHub Pages.</p>
+			<p>© 2026 Zongyuan Liu.</p>
 		</footer>
 	</body>
 </html>
@@ -241,12 +332,12 @@ const researchInterests = [
 
 	.links {
 		display: flex;
-		gap: 24px;
+		gap: 22px;
 	}
 
 	.links a {
 		color: #5f6b76;
-		font-size: 0.94rem;
+		font-size: 0.92rem;
 		text-decoration: none;
 	}
 
@@ -272,12 +363,12 @@ const researchInterests = [
 	}
 
 	.eyebrow,
-	.status,
+	.period,
 	.section-title span {
 		color: #245b88;
 		font-size: 0.8rem;
 		font-weight: 700;
-		letter-spacing: 0.1em;
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
 	}
 
@@ -348,7 +439,7 @@ const researchInterests = [
 	}
 
 	.panel,
-	.publication,
+	.education-item,
 	.interest-grid article,
 	.projects article {
 		border: 1px solid #dfe5ea;
@@ -356,8 +447,7 @@ const researchInterests = [
 		background: white;
 	}
 
-	.panel,
-	.publication {
+	.panel {
 		padding: 28px;
 	}
 
@@ -366,6 +456,29 @@ const researchInterests = [
 		padding-right: max(24px, calc((100vw - 1080px) / 2 + 24px));
 		padding-left: max(24px, calc((100vw - 1080px) / 2 + 24px));
 		background: #edf2f5;
+	}
+
+	.timeline {
+		display: grid;
+		gap: 16px;
+	}
+
+	.education-item {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 30px;
+		padding: 24px;
+	}
+
+	.education-item p {
+		margin: 4px 0;
+	}
+
+	.muted,
+	.projects p,
+	.contact-text {
+		color: #5f6b76;
 	}
 
 	.interest-grid {
@@ -381,14 +494,21 @@ const researchInterests = [
 
 	.projects {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		gap: 18px;
 	}
 
-	.projects p,
-	.publication p,
-	.contact-text {
-		color: #5f6b76;
+	.tools {
+		font-weight: 600;
+	}
+
+	.award-list {
+		margin: 0;
+		padding-left: 20px;
+	}
+
+	.award-list li + li {
+		margin-top: 10px;
 	}
 
 	.contact-text {
@@ -422,6 +542,11 @@ const researchInterests = [
 		.interest-grid,
 		.projects {
 			grid-template-columns: 1fr;
+		}
+
+		.education-item {
+			flex-direction: column;
+			gap: 8px;
 		}
 
 		.hero {
