@@ -1,6 +1,7 @@
 ---
 const researchInterests = [
 	'Topology Optimization',
+	'Topology Optimization for Turbulent Flows',
 	'Computational Fluid Dynamics',
 	'Numerical Analysis',
 	'Partial Differential Equations',
@@ -9,20 +10,48 @@ const researchInterests = [
 
 const education = [
 	{
+		degree: 'Special Research Student',
+		institution: 'Osaka University',
+		location: 'Osaka, Japan',
+		period: 'Apr 2026 – Apr 2027',
+		details: 'Visiting student in the research group of Prof. Kentaro Yaji',
+	},
+	{
 		degree: 'Master of Science in Mathematics',
 		institution: 'East China Normal University',
 		location: 'Shanghai, China',
 		period: 'Sep 2024 – Jun 2027 (Expected)',
+		details: '',
 	},
 	{
 		degree: 'Bachelor of Science in Physics',
 		institution: 'East China Normal University',
 		location: 'Shanghai, China',
 		period: 'Sep 2020 – Jun 2024',
+		details: '',
+	},
+];
+
+const publications = [
+	{
+		title: 'Topology Optimization for Microfluidic Mixers by a Phase Field Method',
+		authors: 'Zongyuan Liu, Jiajie Li, and Shengfeng Zhu',
+		journal: 'International Journal for Numerical Methods in Fluids',
+		year: '2026',
+		pages: '1–17',
+		doi: '10.1002/fld.70083',
+		url: 'https://doi.org/10.1002/fld.70083',
 	},
 ];
 
 const projects = [
+	{
+		title: 'Topology Optimization for Unsteady and Turbulent Flows',
+		period: 'Apr 2026 – Apr 2027',
+		tools: 'C++, Lattice Boltzmann Method, LES, Discrete Adjoint Method',
+		description:
+			'Conducting research as a visiting Special Research Student in Prof. Kentaro Yaji’s research group at Osaka University. The work focuses on topology optimization for unsteady and turbulent flows.',
+	},
 	{
 		title: 'Topology Optimization of Multiphysics Fluid Systems',
 		period: 'Oct 2024 – Jun 2025',
@@ -90,13 +119,14 @@ const awards = [
 				<a class="name" href="/">Zongyuan Liu</a>
 
 				<div class="links">
-					<a href="#about">About</a>
-					<a href="#education">Education</a>
-					<a href="#research">Research</a>
-					<a href="#projects">Projects</a>
-					<a href="#skills">Skills</a>
-					<a href="#contact">Contact</a>
-				</div>
+				<a href="#about">About</a>
+				<a href="#education">Education</a>
+				<a href="#research">Research</a>
+				<a href="#publications">Publications</a>
+				<a href="#projects">Experience</a>
+				<a href="#skills">Skills</a>
+				<a href="#contact">Contact</a>
+			</div>
 			</nav>
 		</header>
 
@@ -167,6 +197,7 @@ const awards = [
 									<h3>{item.degree}</h3>
 									<p>{item.institution}</p>
 									<p class="muted">{item.location}</p>
+									{item.details && <p class="education-details">{item.details}</p>}
 								</div>
 
 								<p class="period">{item.period}</p>
@@ -187,6 +218,42 @@ const awards = [
 						researchInterests.map((interest) => (
 							<article>
 								<h3>{interest}</h3>
+							</article>
+						))
+					}
+				</div>
+			</section>
+			
+			<section id="publications" class="alternate">
+				<div class="section-title">
+					<span>04</span>
+					<h2>Publications</h2>
+				</div>
+
+				<div class="publication-list">
+					{
+						publications.map((publication) => (
+							<article class="publication">
+								<p class="publication-year">{publication.year}</p>
+
+								<h3>{publication.title}</h3>
+
+								<p class="publication-authors">
+									<strong>Zongyuan Liu</strong>, Jiajie Li, and Shengfeng Zhu
+								</p>
+
+								<p class="publication-journal">
+									<em>{publication.journal}</em>, {publication.pages}, {publication.year}.
+								</p>
+
+								<a
+									class="doi-link"
+									href={publication.url}
+									target="_blank"
+									rel="noreferrer"
+								>
+									DOI: {publication.doi}
+								</a>
 							</article>
 						))
 					}
@@ -379,6 +446,12 @@ const awards = [
 		letter-spacing: -0.06em;
 	}
 
+	.education-details {
+		margin-top: 10px;
+		color: #5f6b76;
+		font-size: 0.95rem;
+	}
+
 	.intro {
 		max-width: 780px;
 		margin: 0 0 14px;
@@ -509,6 +582,51 @@ const awards = [
 
 	.award-list li + li {
 		margin-top: 10px;
+	}
+	.publication-list {
+	display: grid;
+	gap: 18px;
+}
+
+	.publication {
+		padding: 28px;
+		border: 1px solid #dfe5ea;
+		border-radius: 10px;
+		background: white;
+	}
+
+	.publication h3 {
+		max-width: 850px;
+		margin-bottom: 12px;
+		font-size: 1.25rem;
+		line-height: 1.45;
+	}
+
+	.publication-year {
+		margin: 0 0 10px;
+		color: #245b88;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.publication-authors,
+	.publication-journal {
+		margin: 5px 0;
+		color: #5f6b76;
+	}
+
+	.doi-link {
+		display: inline-block;
+		margin-top: 14px;
+		color: #245b88;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.doi-link:hover {
+		text-decoration: underline;
 	}
 
 	.contact-text {
